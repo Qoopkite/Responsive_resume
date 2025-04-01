@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            height: 100%;
+        }
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow: hidden;
+        }
+        .content {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            overflow-y: auto;
+        }
+        .top-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .bottom-section {
+            margin: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        .box {
+            background-color: white;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            
+        }
+        .profile-img {
+            width: 300px;
+        }
+        .title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .project-grid{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            justify-content: center;
+            align-items: center;
+            padding : 0.5rem;
+        }
+        .external-activities{
+            display: grid;
+            grid-template-columns: 2fr 4fr 1fr;
+            justify-content: center;
+            align-items: center;
+            padding : 0.5rem;
+        }
+        
+
+        /* 반응형 스타일 */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* 사이드바가 위로 올라가도록 설정 */
+            }
+            .sidebar {
+                text-align: center;
+            }
+            .top-section {
+                grid-template-columns: 1fr; /* 상자들을 세로 정렬 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>이력서</header>
+    <div class="container">
+        <div class="sidebar">
+            <img class="profile-img" src="./img/profile.png" alt="프로필이미지"/>
+            <p></p>배새연</p>
+            <p>2003.07.01</p>
+            <p>example@naver.com</p>
+
+        </div>
+        <div class="content">
+            <div class="top-section">
+                <div class="box">
+                    <div class="title">학력</div>
+                    <p>인하대학교 정보통신공학과 휴학</p>
+                </div>
+                <div class="box">
+                    <div class="title">기술스택</div>
+                    <p>C++</p>
+                    <p>Java</p>
+                    <p>JavaScript</p>
+                    <p>React</p>
+                    <p>Git</p>
+                </div>
+            </div>
+            <div class="top-section">
+                <div class="box">
+                    <div class="title">자격증</div>
+                    <p>정보처리기사 필기 (2025.03)</p>
+                    <p>정보처리기사 실기 예정</p>
+                    <p>AWS SAA 예정</p>
+                    <p>OPIC 예정</p>
+                </div>
+                <div class="box">
+                    <div class="title">프로젝트</div>
+                    <div class="project-grid">
+                        <p>PawStroy</p>
+                        <p>반려인들의 소개팅+일기 웹/앱 사이트<br>
+                            반려동물의 얼굴로 산책 메이트 매칭 가능
+                            반려동물과의 하루를 기록하는 일기와 반려인들과의 커뮤니티</p>
+                    </div>
+                    <div class="project-grid">
+                        <p>Reverseinha</p>
+                        <p>고독 청년 지원 플랫폼<br>
+                            1인 가구 청년들의 우울감 개선, 상담 지원, 관련 정보 제공
+                            </p>
+                    </div>
+                    <div class="project-grid">
+                        <p>OJAKGYO_BRIDGE</p>
+                        <p>종점 주변 버스 시간 예측<br>
+                            공공데이터를 활용한 종점 주변 거주자들의 버스 시간 예측 어려움 해소<br>
+                            (개발 당시에는 네이버 지도앱에 과거 시간표 보기 기능이 없었음)
+                            </p>
+                    </div>
+                    <div class="project-grid">
+                        <p>Makourse</p>
+                        <p>데이트코스 앱 (개발중)<br>
+                            네이버 지도 api활용 데이트 코스 계획 생성, 없는 장소 생성 지원<br>
+                            추후 친구추가기능, 장소 추천 알고리즘, 캐치테이블연동 도입 예정
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <div class="title">대외활동</div>
+                <div class="external-activities">
+                    <p>2022.03~2024.06</p>
+                    <p>인하대 아이그루스 활동</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.03~2024.12</p>
+                    <p>인하대 멋쟁이 사자처럼 FE 활동</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.03</p>
+                    <p>인하대 멋쟁이 사자처럼 아이디어톤</p>
+                    <p>1위</p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.05</p>
+                    <p>멋쟁이 사자처럼 중앙 아이디어톤</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.05</p>
+                    <p>교내 PM 문제 해결 아이디어 경진대회</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.07</p>
+                    <p>인하대 멋쟁이 사자처럼 해커톤</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.08</p>
+                    <p>멋쟁이 사자처럼 중앙 해커톤</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2024.08</p>
+                    <p>소중한 상명x인하 해커톤</p>
+                    <p></p>
+                </div>
+                <div class="external-activities">
+                    <p>2025.03~</p>
+                    <p>딥다이브 클라우드네이티브엔지니어링 과정</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
