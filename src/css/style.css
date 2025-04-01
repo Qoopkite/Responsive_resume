@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -21,27 +20,34 @@ header {
 .container {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    height: 100%;
+    height: 100vh; /* 화면 높이 꽉 차게 */
 }
 .sidebar {
     background-color: #f4f4f4;
     padding: 1rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    height: 100%; /* 고정 */
+    position: sticky;
+    top: 0;
 }
 .content {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    overflow-y: auto;
-    height: 1000px;
+    grid-template-rows: auto;
+    overflow-y: auto; /* 스크롤 가능 */
+    height: 100vh;
+    padding: 1rem;
 }
 .top-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 1rem;
     gap: 1rem;
 }
 .bottom-section {
-    margin: 1rem;
+    margin: 1rem 0;
     padding: 1rem;
     background-color: white;
     border: 1px solid #ccc;
@@ -50,7 +56,6 @@ header {
     background-color: white;
     padding: 1rem;
     border: 1px solid #ccc;
-    
 }
 .profile-img {
     width: 300px;
@@ -59,31 +64,35 @@ header {
     font-size: 17px;
     font-weight: 600;
 }
-.project-grid{
+.project-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    justify-content: center;
     align-items: center;
-    padding : 0.5rem;
+    padding: 0.5rem;
 }
-.external-activities{
+.external-activities {
     display: grid;
     grid-template-columns: 2fr 4fr 1fr;
-    justify-content: center;
     align-items: center;
-    padding : 0.5rem;
+    padding: 0.5rem;
 }
-
 
 /* 반응형 스타일 */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* 사이드바가 위로 올라가도록 설정 */
+        grid-template-columns: 1fr; /* 사이드바가 위로 이동 */
+        height: auto; /* 높이 자동 조정 */
     }
     .sidebar {
-        text-align: center;
+        position: relative; /* 고정 해제 */
+        height: auto;
+        overflow: visible;
+    }
+    .content {
+        height: auto; /* 컨텐츠도 높이 자동 조정 */
+        overflow: visible;
     }
     .top-section {
-        grid-template-columns: 1fr; /* 상자들을 세로 정렬 */
+        grid-template-columns: 1fr; /* 세로 정렬 */
     }
 }
